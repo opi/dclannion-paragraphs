@@ -34,6 +34,7 @@
         <section data-transition="convex">
           <h2>Présentation</h2>
           <table>
+            <tbody>
             <tr>
 
               <td style="width: 50%;">
@@ -47,6 +48,7 @@
                 <img class="plain" width="150px" src="images/logo_flocon.png" alt="Logo Flocon de toile">
               </td>
             </tr>
+            </tbody>
           </table>
 
         </section>
@@ -55,26 +57,88 @@
         <section data-transition="convex" data-markdown>
           ## Introduction
 
+          - C'est quoi paragraphs / a quoi ca sert
+          - https://www.drupal.org/project/paragraphs
+          - Pourquoi cette conférence : ce module nous semble trop méconnu et sous utilisé
+        </section>
+
+        <section data-transition="convex" data-markdown>
+          - (13:27:41) opi: J'ai presque envie de proposer une conférence sur le module *paragraphs*, en mode retour d'xp, exemple de ce qu'on peut faire de foufou avec paragraph ; ca tenterai quelqu'un de la faire avec moi ? (en mode a l'arrache, cela va sans dire)
+          - (13:30:33) flocondetoile: opi: partant
+          - (13:32:15) opi: cool
         </section>
 
         <section data-transition="convex" data-markdown>
           ## Avantages de paragraphs
 
+          - Réutilisation de composants
+          - Composition riche de pages complexes
+          - Atomic design !!!
+          - Support des révisions / multilinguisme
+        </section>
+
+        <section data-transition="convex" data-markdown>
+          ## Inconvénients
+          ### Y en pas !
+        </section>
+
+        <section data-transition="convex" data-markdown>
+          ## Ou un tout petit peu
+          - les champs d'un paragraph mixent contenus et configuration (mais les behavior plugins sont une réponse)
+          - multiplication des champs et des tables dans la bdd (penser aux configuraiton communes pour diminuer cet effet de bord et pour faciliter l'exploitation de ces configurations)
         </section>
 
         <section data-transition="convex" data-markdown>
           ## Usages de paragraphs
 
+          - Adieu le body fourre-tout
+          - composition d'un contenu riche
+          - composition de pages avec des agencements complexes et maîtisés
+          - donner accès aux éditeurs à des layout de page (composition modulaire)
         </section>
 
         <section data-transition="convex" data-markdown>
           ## Paragraphs vs Panel / Display Suite
+          - Panel / display suite : approche Site builder. Nécessité de droits avancés pour configurer des pages
+          - Paragraphs : on peut déléguer au rédacteur toute la mise en page
+        </section>
 
+        <section data-transition="convex" data-markdown>
+          ## Un grand pouvoir implique de grandes responsabilités
         </section>
 
         <section data-transition="convex" data-markdown>
           ## Types de paragraphes possibles
+        </section>
 
+        <section data-transition="convex" data-markdown>
+          ## Des éléments de base
+          - texte
+          - titre
+          - separateur
+          - images
+          - bouton / lien
+          - chapeau, citation
+        </section>
+
+        <section data-transition="convex" data-markdown>
+          ## Des éléments plus avancés
+          - texte + image + styles
+          - entity_reference
+          - accordéon / onglets
+          - block reference, vers des blocs statiques
+          - views reference, pour listing automatiques de certains contenus
+          - fichiers attachés ou ressources
+        </section>
+
+        <section data-transition="convex" data-markdown>
+          ## Des éléments plus avancés
+          - pictogrammes / images + texte
+          - container / grille
+          - video (locale/embarquée)
+          - diaporama /  gallerie d'image
+          - constructeur de requête / rendu
+          - etc.
         </section>
 
         <section data-transition="convex" data-markdown>
@@ -84,22 +148,79 @@
 
         <section data-transition="convex" data-markdown>
           ## Ecrire son propre paragraphs
+          - Beaucoup de clics
+          - Un zeste de code
+          - Magic CSS
+        </section>
+
+        <section data-transition="convex">
+          <h2>Exemples de code</h2>
+          <pre><code class="hljs php">
+function MON_MODULE_preprocess_paragraph(&$variables) {
+  // Overlay / background.
+  $variables['overlay_color'] = FALSE;
+  if ($paragraph->hasField('field_paragraph_overlay')) {
+    if ($overlay_color = $paragraph->field_paragraph_overlay->value) {
+      $variables['overlay_color'] = ['#plain_text' => $overlay_color];
+    }
+  }
+}
+          </code></pre>
 
         </section>
 
-        <section data-transition="convex" data-markdown>
-          ## Exemples Code preprocess / hook_entity_view (D7/D8)
+        <section data-transition="convex">
+          <pre><code class="hljs html">
+{% block paragraph %}
+  &lt;div{{ attributes.addClass(classes) }}>
+    {% block content %}
+     ...
+        {% if overlay_color %}
+          &lt;div class="paragraph-overlay"
+            style="background-color: {{ overlay_color }};"&gt;&lt;/div&gt;
+        {% endif %}
+     ...
+    {% endblock %}
+  &lt;/div&gt;
+{% endblock paragraph %}
+          </code></pre>
+
+        </section>
+
+        <section data-transition="convex">
+          <pre><code class="hljs css">
+.paragraph-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+.window-width .paragraph-overlay {
+  width: 100vw;
+}
+          </code></pre>
 
         </section>
 
         <section data-transition="convex" data-markdown>
           ## Modules contrib pour étendre paragraphs
-
+          - https://www.drupal.org/project/paragraphs_summary (D7)
+          - https://www.drupal.org/sandbox/mtaltavull/2830717 (D8)
+          - https://www.drupal.org/project/paragraphs_collection (D8)
+          - https://www.drupal.org/project/classy_paragraphs (D7/D8)
+          - https://www.drupal.org/project/paragraphs_bootstrap (D8)
         </section>
 
         <section data-transition="convex" data-markdown>
           ## Le futur de Paragraphs
 
+          - séparer le contenu de la configuration
+          - Librairie réutilisable de paragraphs
+          - UX améliorée
+
+          source :https://www.md-systems.ch/en/blog/md-systems/2017/09/20/the-evolution-of-paragraphs
         </section>
 
 
