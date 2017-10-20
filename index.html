@@ -79,18 +79,19 @@
 
         <section data-transition="convex" data-markdown>
           ## Inconvénients
-          ### Y en pas !
+          # Y en pas !
         </section>
 
         <section data-transition="convex" data-markdown>
           ## Ou un tout petit peu
-          - les champs d'un paragraph mixent contenus et configuration (mais les behavior plugins sont une réponse)
-          - multiplication des champs et des tables dans la bdd (penser aux configuraiton communes pour diminuer cet effet de bord et pour faciliter l'exploitation de ces configurations)
-          - UI peut être confuse (séparer les champs de contenu des cahmps de configuration avec le module field Group)
+          - les champs d'un paragraph mixent contenus et configuration
+          - Multiplication des champs et des tables dans la bdd (penser aux configurations communes)
+          - UI peut être confuse (utiliser le module field Group)
+          - On ne peut pas connaître à l'avance quels paragraphes sont disponibles sur un contenu (SEO, Page listing, etc.)
         </section>
 
         <section data-transition="convex" data-markdown>
-          ## Usages de paragraphs
+          ## Usages de paragraphes
 
           - Adieu le body fourre-tout
           - composition d'un contenu riche
@@ -217,7 +218,7 @@ function MON_MODULE_preprocess_paragraph(&$variables) {
         <section data-transition="convex" data-markdown>
           ## Le futur de Paragraphs
 
-          - séparer le contenu de la configuration
+          - Séparer le contenu de la configuration
           - Librairie réutilisable de paragraphs
           - UX améliorée
 
