@@ -8,6 +8,7 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/local.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -25,13 +26,13 @@
 		<div class="reveal">
 			<div class="slides">
 
-        <section data-transition="convex">
+        <section id="prez" data-transition="convex">
 					<h1>Paragraphs</h1>
 					<p>Le module paragraphs par l'exemple,
             <br />ou la rédaction de contenu sous <b>stéroides</b></p>
 				</section>
 
-        <section data-transition="convex">
+        <section id="presentation" data-transition="convex">
           <h2>Présentation</h2>
           <table>
             <tbody>
@@ -54,17 +55,18 @@
         </section>
 
 
-        <section data-transition="convex">
+        <section id="intro" data-transition="convex">
           <h2>Introduction</h2>
           <ul>
-          <li><a href="https://www.drupal.org/project/paragraphs">drupal.org/project/paragraphs</a></li>
-          <li>C'est quoi paragraphs / a quoi ca sert ?</li>
-          <li>Pourquoi cette conférence ?
-            <span class="fragment">ce module nous semble trop méconnu et sous utilisé</span>
-          </li>
+            <li><a href="https://www.drupal.org/project/paragraphs">drupal.org/project/paragraphs</a></li>
+            <li>C'est quoi paragraphs / a quoi ca sert ?</li>
+            <li>Pourquoi cette conférence ?
+              <span class="fragment">ce module nous semble trop méconnu et sous utilisé</span>
+            </li>
+          </ul>
         </section>
 
-        <section data-transition="convex">
+        <section id="genese" data-transition="convex">
         	<h2>La génèse sur #drupal-fr</h2>
 <pre>
 <span style="color: grey">(13:27:41)</span> <b style="color:orange">opi></b> J'ai presque envie de proposer une conférence 
@@ -77,18 +79,19 @@
 </pre>
         </section>
 
-        <section data-transition="convex" data-markdown>
-          ## Avantages de paragraphs
-
-          - Réutilisation de composants
-          - Composition riche de pages complexes
-          - Atomic design !!!
-          - Support des révisions / multilinguisme
+        <section id="avantages" data-transition="convex">
+          <h2>Avantages de paragraphs</h2>
+          <ul>
+            <li>Réutilisation de composants</li>
+            <li>Composition riche de pages complexes</li>
+            <li>Atomic design !!! <img class="plain" width="150px" src="images/boom.png" alt="Boom" style="margin:0; vertical-align: middle;"></li>
+            <li>Support des révisions / multilinguisme</li>
+        </ul>
         </section>
 
         <section data-transition="convex">
           <h2 class="">Inconvénients</h2>
-          <h1 class="fragment">Y en pas !</h1>
+          <h1 class="fragment blue">Y en pas !</h1>
         </section>
 
         <section data-transition="convex" data-markdown>
@@ -105,21 +108,34 @@
 
           - Adieu le body fourre-tout
           - Composition d'un contenu riche
-          - Composition de pages avec des agencements complexes et maîtisés
-          - Donner accès aux éditeurs à des layout de page (composition modulaire)
+          - Composition de pages avec des agencements complexes et maîtrisés
+          - Donner accès aux éditeurs à des agencements de page d'atterrissage / immersives (composition modulaire)
+        </section>
+
+        <section data-transition="convex" data-background="images/landing.gif">
+          <h4 class="overlay-black">Un exemple de page fait avec un seul type de paragraphe</h4>
         </section>
 
         <section data-transition="convex" data-markdown>
           ## Paragraphs vs Panel / Display Suite
 
           - Panel / display suite : approche Site builder. Nécessité de droits avancés pour configurer des pages
-          - Paragraphs : on peut déléguer au rédacteur toute la mise en page
+          - Paragraphs : on peut déléguer au rédacteur toute la mise en page, tout en conservant la maîtrise du rendu et du comportement responsive
         </section>
 
         <section data-transition="convex">
           <h2>Un grand pouvoir implique de grandes responsabilités</h2>
           <em>Maître Gims</em>
         </section>
+
+        <section data-transition="convex" data-background="images/exemple_section.png">
+          <h4 class="overlay-black">Un grand pouvoir implique...</h4>
+        </section>
+
+        <section data-transition="convex" data-background="images/exemple_autre_section.png">
+          <h4 class="overlay-black">...de grandes responsabilités</h4>
+        </section>
+
 
         <section data-transition="convex" data-markdown>
           ## Types de paragraphes possibles
@@ -137,8 +153,9 @@
 
         <section data-transition="convex" data-markdown>
           ## Éléments plus avancés
+          - container / grille
           - texte + image + styles
-          - entity_reference
+          - entity reference
           - accordéon / onglets
           - block reference, vers des blocs statiques
           - views reference, pour listing automatiques de certains contenus
@@ -148,24 +165,106 @@
         <section data-transition="convex" data-markdown>
           ## Éléments plus avancés
           - pictogrammes / images + texte
-          - container / grille
           - video (locale/embarquée)
           - diaporama /  gallerie d'image
+          - chiffres défilants / barres de progression
           - constructeur de requête / rendu
+          - iframe
           - etc.
         </section>
+
 
         <section data-transition="convex" data-markdown>
           ## Exemples réels
           *Attention, démo*
         </section>
 
-        <section data-transition="convex" data-markdown>
-          ## Ecrire son propre paragraphs
+        <!-- Demos -->
+        <section data-transition="convex" data-background="images/titre.png">
+          <h2 class="overlay-black">Titre</h2>
+        </section>
 
-          - Beaucoup de clics
-          - Un zeste de code
-          - Magic CSS
+        <section data-transition="convex" data-background="images/texte.png">
+          <h2 class="overlay-black">Texte</h2>
+        </section>
+
+        <section data-transition="convex" data-background="images/media.png">
+          <h2 class="overlay-black">Media</h2>
+        </section>
+
+        <section data-transition="convex" data-background="images/image.png">
+          <h2 class="overlay-black">Image</h2>
+        </section>
+
+        <section data-transition="convex" data-background="images/liens_avances.png">
+          <h2 class="overlay-black">Liens avancés</h2>
+        </section>
+
+        <section data-transition="convex" data-background="images/liens_avances_rendu.png">
+          <h2 class="overlay-black">Liens avancés</h2>
+        </section>
+
+        <section data-transition="convex" data-background="images/image_texte.png">
+          <h2 class="overlay-black">Section Image + Texte</h2>
+        </section>
+
+        <section data-transition="convex" data-background="images/image_texte_rendu.png">
+          <h2 class="overlay-black">Texte + image en arrière-plan</h2>
+        </section>
+
+        <section data-transition="convex" data-background="images/image_texte_rendu2.png">
+          <h2 class="overlay-black">Texte + image à droite</h2>
+        </section>
+
+        <section data-transition="convex" data-background="images/image_texte_rendu4.png">
+          <h2 class="overlay-black">Texte + image droite / gauche</h2>
+        </section>
+
+        <section data-transition="convex" data-background="images/container.png">
+          <h2 class="overlay-black">Conteneur</h2>
+        </section>
+
+        <section data-transition="convex" data-background="images/image_texte_rendu3.png">
+          <h2 class="overlay-black">Conteneur <br />+ Texte / Image au-dessus</h2>
+        </section>
+
+        <section data-transition="convex" data-background="images/pictos.png">
+          <h2 class="overlay-black">Liste à puces avec pictos</h2>
+        </section>
+
+        <section data-transition="convex" data-background="images/pictos_rendu.png">
+          <h2 class="overlay-black">Liste à puces avec pictos</h2>
+        </section>
+
+        <section data-transition="convex" data-background="images/video.png">
+          <h2 class="overlay-black">Vidéo</h2>
+        </section>
+
+        <section data-transition="convex" data-background="images/video_rendu.png">
+          <h2 class="overlay-black">Vidéo (avec conteneur)</h2>
+        </section>
+
+        <section data-transition="convex" data-background="images/chiffres_barres.png">
+          <h2 class="overlay-black">Chiffres défilants / barres de progression</h2>
+        </section>
+
+        <section data-transition="convex" data-background="images/chiffres_barres_rendu.png">
+          <h2 class="overlay-black">Chiffres défilants / barres de progression</h2>
+        </section>
+
+        <!-- Demos Fin -->
+
+        <section data-transition="convex">
+          <h2>Ecrire son propre paragraphs</h2>
+          <ul>
+            <li>Beaucoup de clics</li>
+            <li>Un zeste de code</li>
+            <li class="fragment">Magic CSS : <img class="plain" src="images/magic_css.gif" alt="Magic" style="margin:0; vertical-align: middle;"></li>
+          </ul>
+        </section>
+
+        <section data-transition="convex" data-background="images/image_text_form.png">
+          <h2 class="overlay-black">Du site building</h2>
         </section>
 
         <section data-transition="convex">
@@ -206,34 +305,40 @@ function MON_MODULE_preprocess_paragraph(&$variables) {
           <pre><code class="hljs css">
 .paragraph-overlay {
   position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  z-index: 1;
+  height: 100%; width: 100%;
+  top: 0; z-index: 1;
 }
 
 .window-width .paragraph-overlay {
   width: 100vw;
+  left: 50%; right: 50%;
+  margin-left: -50vw; margin-right: -50vw;
 }
           </code></pre>
 
         </section>
 
         <section data-transition="convex" data-markdown>
-          ## Modules contrib pour étendre paragraphs
-          - [drupal.org/project/paragraphs_summary](https://www.drupal.org/project/paragraphs_summary) (D7)
-          - [paragraphs_summary (*sandbox*)](https://www.drupal.org/sandbox/mtaltavull/2830717) (D8)
-          - [drupal.org/project/paragraphs_collection](https://www.drupal.org/project/paragraphs_collection) (D8)
-          - [drupal.org/project/classy_paragraphs](https://www.drupal.org/project/classy_paragraphs) (D7/D8)
-          - [drupal.org/project/paragraphs_bootstrap](https://www.drupal.org/project/paragraphs_bootstrap) (D8)
+          # And that's All
+        </section>
+
+        <section data-transition="convex" data-markdown>
+          ## Modules contribués pour étendre paragraphs
+          - [paragraphs_summary](https://www.drupal.org/project/paragraphs_summary) (D7) / [*sandbox*](https://www.drupal.org/sandbox/mtaltavull/2830717) (D8)
+          - [paragraphs_collection](https://www.drupal.org/project/paragraphs_collection) (D8 experimental)
+          - [classy_paragraphs](https://www.drupal.org/project/classy_paragraphs) (D7/D8)
+          - [paragraphs_bootstrap](https://www.drupal.org/project/paragraphs_bootstrap) (D8)
+          - [slick_paragraphs](https://www.drupal.org/project/slick_paragraphs) (D8)
+          - Et beaucoup de modules proposant des bundles préconfigurés
         </section>
 
         <section data-transition="convex" data-markdown>
           ## Le futur de Paragraphs
 
           - Séparer le contenu de la configuration
-          - Librairie réutilisable de paragraphs
+          - Librairie réutilisable de paragraphes
           - UX améliorée
+          - Suivez [Paragraphs Collection](https://www.drupal.org/project/paragraphs_collection)
 
           Source : https://www.md-systems.ch/en/blog/md-systems/2017/09/20/the-evolution-of-paragraphs
         </section>

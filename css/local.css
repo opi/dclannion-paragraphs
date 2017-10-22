@@ -1,0 +1,15 @@
+.blue {
+  color: #1b91ff !important;
+}
+
+.overlay-black {
+  background: rgba(0,0,0,0.5);
+  padding: 0.5rem 1rem;
+  color: #ffffff !important;
+}
+
+.overlay-white {
+  background: rgba(255,255,255,0.5);
+  padding: 0.5rem 1rem;
+  color: #000 !important;
+}
