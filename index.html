@@ -94,13 +94,18 @@
           <h1 class="fragment blue">Y en pas !</h1>
         </section>
 
-        <section data-transition="convex" data-markdown>
-          ## Ou un tout petit peu ;-)
+        <section data-transition="convex">
+          <h2>Ou un tout petit peu ;-)</h2>
+          <ul>
+            <li>Les champs d'un paragraph mixent contenus et configuration</li>
+            <li>Multiplication des champs et des tables dans la bdd (penser aux configurations communes)</li>
+            <li>UI/UX peut être confuse<img class="plain" width="350px" src="images/ugly.png" alt="It's UGLY" style="margin:0; vertical-align: middle;"></li>
+            <li>On ne peut pas connaître à l'avance quels paragraphes sont disponibles sur un contenu (SEO, Page listing, etc.)</li>
+          </ul>
+        </section>
 
-          - Les champs d'un paragraph mixent contenus et configuration
-          - Multiplication des champs et des tables dans la bdd (penser aux configurations communes)
-          - UI peut être confuse (utiliser le module field Group)
-          - On ne peut pas connaître à l'avance quels paragraphes sont disponibles sur un contenu (SEO, Page listing, etc.)
+        <section data-transition="convex" data-background="images/bo.png">
+          <h4 class="overlay-black">Soigner le backoffice !</h4>
         </section>
 
         <section data-transition="convex" data-markdown>
@@ -110,6 +115,10 @@
           - Composition d'un contenu riche
           - Composition de pages avec des agencements complexes et maîtrisés
           - Donner accès aux éditeurs à des agencements de page d'atterrissage / immersives (composition modulaire)
+        </section>
+
+        <section data-transition="convex" data-background="images/super_article_page.png">
+          <h4 class="overlay-black">Article / Page immersive</h4>
         </section>
 
         <section data-transition="convex" data-background="images/landing.gif">
@@ -224,7 +233,7 @@
           <h2 class="overlay-black">Conteneur</h2>
         </section>
 
-        <section data-transition="convex" data-background="images/image_texte_rendu3.png">
+        <section data-transition="convex" data-background="images/conteneur_image_texte.png">
           <h2 class="overlay-black">Conteneur <br />+ Texte / Image au-dessus</h2>
         </section>
 
@@ -268,7 +277,7 @@
         </section>
 
         <section data-transition="convex">
-          <h2>Exemples de code</h2>
+          <h2>Un zeste de code (image arrière-plan)</h2>
           <pre><code class="hljs php">
 function MON_MODULE_preprocess_paragraph(&$variables) {
   // Overlay / background.
@@ -302,6 +311,7 @@ function MON_MODULE_preprocess_paragraph(&$variables) {
         </section>
 
         <section data-transition="convex">
+          <h2>Magic CSS</h2>
           <pre><code class="hljs css">
 .paragraph-overlay {
   position: absolute;
@@ -318,8 +328,38 @@ function MON_MODULE_preprocess_paragraph(&$variables) {
 
         </section>
 
-        <section data-transition="convex" data-markdown>
-          # And that's All
+        <section data-transition="convex">
+          <h2>ajout de classes</h2>
+          <pre><code class="hljs php">
+function MON_MODULE_preprocess_paragraph(&$variables) {
+  // Image position.
+  $variables['paragraph_attributes'] = new Attribute();
+  if ($paragraph->hasField('field_image_position')) {
+    if ($image_position = $paragraph->field_image_position->value) {
+      $variables['paragraph_attributes']->addClass($image_position);
+    }
+  }
+}
+          </code></pre>
+
+        </section>
+
+        <section data-transition="convex">
+          <pre><code class="hljs html">
+{% block paragraph %}
+  &lt;div{{ attributes.addClass(classes) }}>
+    {% block paragraph_wrapper %}
+      &lt;div{{ paragrah_attributes.addClass('paragraph-wrapper') }}>
+         ...
+      &lt;/div&gt;
+    {% endblock %}
+  &lt;/div&gt;
+{% endblock paragraph %}
+          </code></pre>
+
+        </section>
+
+        <section data-transition="convex" data-background="images/thatsall.jpg">
         </section>
 
         <section data-transition="convex" data-markdown>
