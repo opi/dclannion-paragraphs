@@ -17,3 +17,9 @@
 .reveal section img {
     background: transparent;
 }
+
+.reveal code {
+    background: #3f3f3f;
+    color: #dcdcdc;
+    font-size: 90%;
+}
