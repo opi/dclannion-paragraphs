@@ -357,7 +357,20 @@ function MON_MODULE_preprocess_paragraph(&$variables) {
         </section>
 
         <section data-transition="convex">
-          <h2>ajout de classes</h2>
+          <h2>ajout de classes - D7</h2>
+          <pre><code class="hljs php">
+function MON_MODULE_entity_view($entity, $type, $view_mode, $langcode) {
+  if ($type == 'paragraphs_item' 
+      && $entity->bundle == 'my_paragraph_bundle') {
+    // Ajout d'une classe custom
+    $entity->content['#classes_array'][] = 'my-custom-class';
+  }
+}
+          </code></pre>
+        </section>
+
+        <section data-transition="convex">
+          <h2>ajout de classes - D8</h2>
           <pre><code class="hljs php">
 function MON_MODULE_preprocess_paragraph(&$variables) {
   // Image position.
